@@ -1,0 +1,21 @@
+<div class="projects-container">
+  <h2 class="section-title">My Projects</h2>
+
+  <div *ngIf="projects; else loading" class="project-grid">
+    <div *ngFor="let project of projects" class="project-card">
+      <div class="card-image">
+        <img [src]="project.imageURL" [alt]="project.title">
+      </div>
+      <div class="card-content">
+        <h3>{{ project.title }}</h3>
+        <p class="role"><strong>Role:</strong> {{ project.myrole }}</p>
+        <p class="desc">{{ project.description }}</p>
+        <a [href]="project.projectLink" target="_blank" class="btn-link">View Project</a>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #loading>
+    <div class="loader">Loading projects...</div>
+  </ng-template>
+</div>
