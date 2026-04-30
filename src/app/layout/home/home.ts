@@ -1,20 +1,16 @@
 // src/app/components/home/home.component.ts
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { DataService } from '../../core/services/home';
 
 @Component({
   selector: 'app-home',
-  template: `
-    <div class="home-container">
-      <h1>Welcome to my Portfolio</h1>
-      <p *ngIf="apiMessage; else loading">{{ apiMessage }}</p>
-      <ng-template #loading>
-        <p>Loading message from API...</p>
-      </ng-template>
-    </div>
-  `
+  templateUrl: './home.html',
+  styleUrls: ['./home.css'],
+  imports: [CommonModule, RouterLink]
 })
-export class HomeComponent implements OnInit {
+export class Home implements OnInit {
   apiMessage: string = '';
 
   constructor(private dataService: DataService) {}

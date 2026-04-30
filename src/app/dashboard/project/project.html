@@ -1,0 +1,35 @@
+<div class="projects-dashboard">
+  <div class="header-actions">
+    <h1>Projects</h1>
+    <button (click)="goToAdd()" class="btn-add">
+      + Add Project
+    </button>
+  </div>
+
+  <hr />
+
+  <div class="projects-list">
+    <!-- Loop through projects based on your Projects interface -->
+    <div *ngFor="let project of allProjects" class="project-card">
+      <h3>{{ project.title }}</h3>
+      
+      <p class="role"><strong>Role:</strong> {{ project.myrole }}</p>
+      
+      <p class="description">{{ project.description }}</p>
+      
+      <div class="project-links">
+        <a [href]="project.projectLink" target="_blank">View Live Project</a>
+      </div>
+
+      <!-- Action Button -->
+      <button (click)="goToEdit(project._id!)" class="btn-edit">
+        Edit Project
+      </button>
+    </div>
+
+    <!-- Empty State -->
+    <div *ngIf="allProjects.length === 0" class="no-data">
+      <p>No projects found. Click "Add Project" to get started.</p>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,13 @@
 
 <div class="about-container">
 
-  <section *ngIf="skills" class="skills-section">
+  <section *ngIf="myskills" class="skills-section">
 
     <h2>Technical Skills</h2>
 
     <div class="skills-grid">
 
-      <span *ngFor="let skill of skills.skills" class="skill-pill">{{ skill }}</span>
+      <span *ngFor="let skill of myskills.skills" class="skill-pill">{{ skill }}</span>
 
     </div>
 
@@ -15,11 +15,11 @@
 
   <h2>Education</h2>
 
-  <div class="edu-card">
+  <div *ngFor="let edu of education" class="edu-card">
 
-    <h3>{{ education.degree }}</h3>
+    <h3>{{ edu.degree }}</h3>
 
-    <p>{{ education.institution }} | {{ education.year }}</p>
+    <p>{{ edu.institution }} | {{ edu.year }}</p>
 
   </div>
 

@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs/internal/Observable';
 import { ProjectsService } from '../../core/services/projects.service';
 import { Projects } from '../../core/interfaces/projects.module';
@@ -6,7 +7,7 @@ import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-projects',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })

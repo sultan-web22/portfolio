@@ -1,10 +1,12 @@
 import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { ServicesService, Services } from '../../core/services/services';
 
 @Component({
   selector: 'app-services',
-  templateUrl: './services.component.html'
+  templateUrl: './services.html',
+  imports: [CommonModule, DatePipe]
 })
 export class services implements OnInit, OnDestroy {
   services: Services[] = [];

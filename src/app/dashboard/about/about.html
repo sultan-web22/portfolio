@@ -1,0 +1,24 @@
+<div class="about-dashboard">
+  <!-- Skills Section -->
+  <section class="skills-section">
+    <h2>My Skills</h2>
+    <button (click)="goToEditSkills()">Edit Skills</button>
+    <ul>
+      <li *ngFor="let s of mySkills.skills">{{ s }}</li>
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Education Section -->
+  <section class="education-section">
+    <h2>Education</h2>
+    <button (click)="goToAddEducation()">+ Add Education</button>
+    
+    <div *ngFor="let edu of educationList" class="edu-item">
+      <h3>{{ edu.degree }}</h3>
+      <p>{{ edu.institution }} - {{ edu.year }}</p>
+      <button (click)="goToEditEducation(edu)">Edit</button>
+    </div>
+  </section>
+</div>

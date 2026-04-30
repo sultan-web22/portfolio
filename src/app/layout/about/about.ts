@@ -1,29 +1,27 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { About } from '../../core/services/about'; // Assume this exists
-import { Educatation, skills } from '../../core/interfaces/about.module';
-
+import { AboutService } from '../../core/services/about'; 
+import { Educatation, skills } from '../../core/interfaces/aboutmodule';
 
 @Component({
   selector: 'app-about',
-  templateUrl: './about.component.html'
+  templateUrl: './about.html',
+  imports: [CommonModule]
 })
-export class AboutComponent implements OnInit, OnDestroy {
-  skills!: skills;
-
-education!: Educatation[];
+export class about implements OnInit, OnDestroy {
+  myskills!: skills;
+  education!: Educatation[];
   private subs = new Subscription();
 
-  constructor(private _aboutService: About) {}
+  constructor(private _aboutService: AboutService) {}
 
   ngOnInit(): void {
-    // Fetch Skills
     this.subs.add(
-      this._aboutService.getSkills().subscribe(data => this.skills = data)
+      this._aboutService.getSkills().subscribe((data: skills) => this.myskills = data)
     );
-    // Fetch Education
     this.subs.add(
-      this._aboutService.getEducation().subscribe(data => this.education = data)
+      this._aboutService.getEducation().subscribe((data: Educatation[]) => this.education = data)
     );
   }
 

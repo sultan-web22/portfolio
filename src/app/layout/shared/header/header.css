@@ -7,8 +7,19 @@
     background: var(--bg-color);
     display: flex;
     justify-content: space-between;
-    align-items: left 30px;
+    align-items: center;
     z-index: 100;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.navbar a {
+    white-space: nowrap;
 } 
 .logo { font-size: 25px; color: var(--text-color); font-weight: 600; }
 .logo span { color: var(--main-color); }

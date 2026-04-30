@@ -1,0 +1,12 @@
+<div class="dashboard-section">
+  <h2>My Services</h2>
+  <div *ngFor="let service of allServices" class="service-item">
+    <p><strong>Type:</strong> {{ service.type }}</p>
+    <p><strong>Available From:</strong> {{ service.availabilitydate | date }}</p>
+    
+    <!-- Button to redirect to the edit form -->
+    <button (click)="goToEdit(service._id!)" class="edit-btn">
+      Edit Service Details
+    </button>
+  </div>
+</div>

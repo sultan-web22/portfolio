@@ -1,0 +1,39 @@
+<div class="about-form-container">
+  <h1>About Form</h1>
+
+  <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+    <!-- Skills Section -->
+    <section class="form-section">
+      <h2>Skills</h2>
+      <div formArrayName="skills">
+        <div *ngFor="let skill of skillsArray.controls; let i = index" class="skill-item">
+          <input type="text" [formControlName]="i" placeholder="Enter skill">
+          <button type="button" (click)="removeSkill(i)">Remove</button>
+        </div>
+        <button type="button" (click)="addSkill()">Add Skill</button>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="form-section" *ngIf="isEditMode">
+      <h2>Edit Education</h2>
+      <div class="form-group">
+        <label for="degree">Degree:</label>
+        <input type="text" id="degree" formControlName="degree">
+      </div>
+      <div class="form-group">
+        <label for="institution">Institution:</label>
+        <input type="text" id="institution" formControlName="institution">
+      </div>
+      <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="text" id="year" formControlName="year">
+      </div>
+    </section>
+
+    <div class="form-actions">
+      <button type="submit" [disabled]="aboutForm.invalid">Save</button>
+      <button type="button" (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+</div>
