@@ -1,0 +1,9 @@
+<div class="services-container">
+  <h2>My Services</h2>
+  <div class="service-list">
+    <div *ngFor="let service of services" class="service-item">
+      <h3>{{ service.type }}</h3>
+      <p>Available from: {{ service.availabilitydate | date:'mediumDate' }}</p>
+    </div>
+  </div>
+</div>

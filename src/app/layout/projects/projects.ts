@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
-import { ProjectsService } from '../../../core/services/projects.service';
-import { Projects } from '../../../core/interfaces/projects.module';
+import { ProjectsService } from '../../core/services/projects.service';
+import { Projects } from '../../core/interfaces/projects.module';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { About } from '../../../core/services/about'; // Assume this exists
-import { Educatation, skills } from '../../../core/interfaces/about.module';
+import { About } from '../../core/services/about'; // Assume this exists
+import { Educatation, skills } from '../../core/interfaces/about.module';
 
 
 @Component({

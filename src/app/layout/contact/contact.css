@@ -1,0 +1,6 @@
+.contact-form { max-width: 500px; margin: 20px auto; display: flex; flex-direction: column; gap: 15px; }
+.form-group { display: flex; flex-direction: column; }
+input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+button { padding: 10px; background: #007bff; color: white; border: none; cursor: pointer; }
+button:disabled { background: #ccc; }
+small { color: red; font-size: 0.8rem; }
